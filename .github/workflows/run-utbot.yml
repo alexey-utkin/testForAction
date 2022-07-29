@@ -1,0 +1,17 @@
+name: "Run UTBotCpp-action"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: UTBot code analysis
+        uses: UnitTestBot/UTBotCpp-action@test-1.0.25
+        with:
+          add_tests: 'true'
+          refresh_tests: 'true'
+          utbot_version: '2022.7.3'
+          scope: 'project'
